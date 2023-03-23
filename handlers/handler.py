@@ -1,6 +1,6 @@
 from aiogram import Dispatcher, types
+from datetime import datetime
 from utils.random_cat import get_picture
-from utils.time import current_time
 from utils.exchange_rate import rate
 from utils.btc_rate import rate as btc_rate
 from utils.random_receipt import receipt
@@ -8,7 +8,6 @@ from utils.movies import str_for_bot
 from utils.random_joke import joke
 from globals import bot
 from keyboard.user_kb import kb_client
-from states.game_states import GameAttempts
 
 
 async def send_welcome(message: types.Message):
@@ -21,7 +20,7 @@ async def send_cat(message: types.Message):
 
 
 async def send_time(message: types.Message):
-    await message.reply(f"Сейчас {current_time}", reply_markup=kb_client)
+    await message.reply(f"Сейчас {datetime.now().strftime('%H:%M:%S')}", reply_markup=kb_client)
 
 
 async def send_exchange(message: types.Message):
