@@ -6,7 +6,7 @@ from random import randint
 
 
 async def start_guess_number(message: types.Message):
-    await message.reply("Давай сыграем. Я загадал число от одного до десяти. Попробуй угадать с трёх попыток."
+    await message.answer("Давай сыграем. Я загадал число от одного до десяти. Попробуй угадать с трёх попыток."
                         " Попытка номер 1...")
     global random_number
     random_number = str(randint(1, 10))
